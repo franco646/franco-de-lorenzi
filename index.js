@@ -41,3 +41,14 @@ window.addEventListener("scroll", () => {
     alterStyles(isBackToTopRendered);
   }
 });
+
+window.addEventListener("scroll", () => {
+  if (window.innerWidth >= 900) {
+    if(document.body.scrollTop > 80 || document.documentElement.scrollTop > 80) {
+      document.querySelector('.header').style.backgroundSize = '150%';
+    }else{
+      document.querySelector('.header').style.backgroundSize = '100%';       
+    }
+  }
+});
+

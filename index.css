@@ -35,7 +35,7 @@
     --line-height-small: 1.2;
 
     --black: #000;
-    --pink: #ff3258;
+    --pink: #B31212;
     --white: #f0e9f2;
     --white-1: #e5e5e6da;
 
@@ -152,6 +152,33 @@ h2::after {
     width: 10rem;
     background: var(--pink);
     margin: var(--gutter-small) 0;
+}
+
+h2.about__tittle {
+    margin: 0%;
+}
+
+p.about__subtittle {
+    margin-top: 0%;
+}
+
+p.about__subtittle::after {
+    content: '';
+    text-align: center;
+    display: block;
+    height: 2px;
+    width: 100%;
+    background: var(--pink);
+    margin-top: 1% !important;
+    margin: var(--gutter-small) 0;
+}
+
+h2.about__tittle::after {
+    content: none;
+}
+
+.about__text p {
+    margin: 0%;
 }
 
 h3 {
@@ -403,14 +430,77 @@ body:not(.user-is-tabbing) a:focus {
 /* ----- Header ----- */
 /* --------------------------------------- */
 
-.header {
-    background: linear-gradient(rgba(0,0,0, .1), rgba(0,0,0, .4)), 
-        url('./images/header.jpg');
+#particles-js {
+    position: absolute;
+    width: 100%;
     height: 100vh;
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
+}
+
+.card {
+    padding: 1rem;
+    min-width: 100%;
+}
+
+.logo {
+    transition: all .2s;
+}
+
+.logo:hover {
+    transform: scale(1.1);
+}
+
+.card.one {
+    --animate-delay: 0s;
+}
+.card.two {
+    --animate-delay: 0.1s;
+}
+.card.three {
+    --animate-delay: 0.2s;
+}
+.card.four {
+    --animate-delay: 0.3s;
+}
+.card.five {
+    --animate-delay: 0.4s;
+}
+.card.six {
+    --animate-delay: 0.5s;
+}
+.card.seven {
+    --animate-delay: 0.6s;
+}
+.card.eigth {
+    --animate-delay: 0.7s;
+}
+
+.logo-subtext {
+    font-size: 70%;
+    text-align: center;
+}
+
+.cards {
+    max-width: 1000px;
+    margin: 0 auto;
+    display: grid;
+    grid-gap: 1rem;
+}
+
+.header {
+    background:linear-gradient(0deg,rgba(0,0,0,1),rgba(0,0,0,0)),url("images/uSACyR.webp") center center fixed;
+    height: 100vh;
+    background-size: cover;
+    background-position: center;
+    background-repeat:no-repeat;
     font-size: var(--font-size-normal);
+    transition:1s ease-in-out;
+}
+
+.heading-secondary {
+    --animate-duration: 2s;
 }
 
 .header__text {
@@ -426,15 +516,27 @@ body:not(.user-is-tabbing) a:focus {
     font-size: var(--font-size-medium);
 }
 
-@media(max-width: 500px) {
+@media (max-width: 600px) {
+    .cards { grid-template-columns: repeat(4, 1fr); }
+}
+
+@media (min-width: 600px) {
+    .cards { grid-template-columns: repeat(8, 1fr); }
+}
+
+@media (max-width: 500px) {
+    .heading-primary {
+        font-size: var(--font-size-large);
+    }
+}
+
+@media (max-width: 600px){
     .header {
         text-align: center;
     }
-
-    .header__text p {
-        transform: scale(.8);
-    }
 }
+
+
 
 /* --------------------------------------- */
 /* ----- Work ----- */
@@ -490,6 +592,57 @@ body:not(.user-is-tabbing) a:focus {
 
 .work__image-box {
     margin-bottom: var(--gutter-normal);
+    position: relative;
+}
+
+.work__image-box:hover .overlay {
+    width: 100%;
+}
+
+.overlay table {
+    display: none;
+}
+
+.overlay:hover table {
+    display: block;
+}
+
+.text {
+  color: white;
+  font-size: 20px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  white-space: nowrap;
+}
+
+.work__image {
+    display: block;
+    width: 100%;
+    height: auto;
+}
+
+.overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: #B31212;
+    overflow: hidden;
+    width: 0;
+    height: 100%;
+    transition: .5s ease;
+}
+
+.card-image {
+    max-width: 1000px;
+    margin: 0 auto;
+    display: grid;
+    grid-gap: 1rem;
+    grid-template-columns: repeat(3, 1fr);
 }
 
 @media(min-width: 901px) {
@@ -536,6 +689,10 @@ body:not(.user-is-tabbing) a:focus {
 /* --------------------------------------- */
 
 .about__content {
+    border: 1px solid #B31212;
+    border-radius: 5px;
+    padding: 20px;
+    text-align: center;
     display: flex;
     flex-direction: row-reverse;
     align-items: center;
@@ -553,9 +710,6 @@ body:not(.user-is-tabbing) a:focus {
 }
 
 @media(min-width: 901px) {
-    .about__text {
-        flex: 0 0 35%;
-    }
     
     .about__photo-container {
         flex: 1;
@@ -569,6 +723,22 @@ body:not(.user-is-tabbing) a:focus {
 
 .contact__info {
     max-width: var(--container-medium-width);
+}
+
+.contact__items {
+    display: inline;
+}
+
+.contact__item {
+    transition: all .3s;
+    position: absolute;
+    margin-left: 1em;
+    max-width: 3.2em;
+    margin-top: -3px;
+}
+
+.contact__item:hover {
+    transform: scale(1.1);
 }
 
 /* --------------------------------------- */
