@@ -32,6 +32,17 @@ let alterStyles = (isBackToTopRendered) => {
     : "scale(0)";
 };
 
+document.querySelectorAll(".video").forEach((video) => {
+  video.addEventListener("mouseover", function() {
+    this.play();
+  });
+  
+  video.addEventListener("mouseleave", function() {
+    this.load();
+  });
+})
+
+
 window.addEventListener("scroll", () => {
   if (window.scrollY > 700) {
     isBackToTopRendered = true;

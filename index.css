@@ -590,6 +590,14 @@ body:not(.user-is-tabbing) a:focus {
     transform: scale(1.2);
 }
 
+.work__image {
+    transition: all .3s;
+}
+
+.work__image:hover {
+    transform: scale(1.02);
+}
+
 .work__image-box {
     margin-bottom: var(--gutter-normal);
     position: relative;
