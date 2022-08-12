@@ -3,10 +3,17 @@
 /* --------------------------------------- */
 
 @font-face {
-    font-family: 'Hk Grotesk';
+    font-family: 'poppins';
     font-style: normal;
     font-weight: 400;
-    src: url('./fonts/HKGrotesk-Regular.woff') format('woff');
+    src: url('./fonts/Poppins-Regular.otf') format('woff');
+}
+
+@font-face {
+    font-family: 'poppins-bold';
+    font-style: normal;
+    font-weight: 400;
+    src: url('./fonts/Poppins-SemiBold.otf') format('woff');
 }
 
 @font-face {
@@ -34,10 +41,10 @@
     --line-height-normal: 1.7;
     --line-height-small: 1.2;
 
-    --black: #000;
-    --pink: #B31212;
-    --white: #f0e9f2;
-    --white-1: #e5e5e6da;
+    --black: #061f29;
+    --pink: #ED653B;
+    --white: #E7dfdd;
+    --white-1: #E7dfdd;
 
 
     --container-max-width: 1180px;
@@ -128,10 +135,29 @@ h3 {
     color: var(--white);
 }
 
+h2.about__title {
+    text-align: center;
+}
+
+h2.about__title::after {
+    margin-inline: auto;
+    position: relative;
+}
+
+h2.contact__title {
+    text-align: center;
+    margin-bottom: 3rem !important;
+}
+
+h2.contact__title::after {
+    margin-inline: auto;
+    position: relative;
+}
+
 .heading-primary {
     line-height: 1;
     font-size: var(--font-size-huge);
-    font-weight: 400;
+    font-family: 'poppins-bold'
 }
 
 @media(max-width: 900px) {
@@ -177,8 +203,12 @@ h2.about__tittle::after {
     content: none;
 }
 
+.about__text {
+   text-align: justify;
+}
+
 .about__text p {
-    margin: 0%;
+    margin-bottom: 2.5rem;
 }
 
 h3 {
@@ -490,7 +520,7 @@ body:not(.user-is-tabbing) a:focus {
 }
 
 .header {
-    background:linear-gradient(0deg,rgba(0,0,0,1),rgba(0,0,0,0)),url("images/uSACyR.webp") center center fixed;
+    background:linear-gradient(0deg,rgba(6,31,41,1),rgba(0,0,0,0)),url("https://www.xtrafondos.com/descargar.php?id=3128&resolucion=2880x1800") center center fixed;
     height: 100vh;
     background-size: cover;
     background-position: center;
@@ -573,6 +603,14 @@ body:not(.user-is-tabbing) a:focus {
     flex: 0 0 30%;
 }
 
+h2 {
+    font-family: 'poppins-bold';
+}
+
+.work__text h3 {
+    font-family: 'poppins-bold'
+}
+
 .work__list {
     /* list-style-type: square; */
     list-style-position: inside;
@@ -591,11 +629,8 @@ body:not(.user-is-tabbing) a:focus {
 }
 
 .work__image {
+    box-shadow: 0 1rem 5rem rgb(0 0 0 / 50%);
     transition: all .3s;
-}
-
-.work__image:hover {
-    transform: scale(1.02);
 }
 
 .work__image-box {
@@ -697,18 +732,62 @@ body:not(.user-is-tabbing) a:focus {
 /* --------------------------------------- */
 
 .about__content {
-    border: 1px solid #B31212;
-    border-radius: 5px;
-    padding: 20px;
-    text-align: center;
+    padding-inline: 4.5rem;
     display: flex;
-    flex-direction: row-reverse;
+    flex-direction: column;
+    max-width: 720px;
+    margin: auto;
     align-items: center;
+}
+
+.about__icons {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: nowrap;
+    margin: auto;
+    align-items: center;
+}
+
+.about__icon-container {
+    display: flex;
+    text-align: center;
+    margin-block: .7rem;
+    align-items: center;
+}
+
+.work {
+    overflow: hidden;
+}
+
+.about__icon-container img {
+    width: 30px;
+    margin-right: .7rem;
+}
+
+@media(max-width: 800px) {
+    .about__icons {
+        column-gap: 20px;
+        flex-direction: column;
+    }
+
+    .about__icon-container {
+        position: relative;
+    }
+
+    .about__icon-container img {
+        position: absolute;
+        right: 100%;
+    }
+}
+
+.cv__button {
+    margin-top: 2.5rem;
+    margin-inline: auto;
 }
 
 @media(max-width: 900px) {
     .about__content {
-        flex-direction: column-reverse;
+        flex-direction: column;
         align-items: initial;
     }
 }
@@ -767,10 +846,21 @@ body:not(.user-is-tabbing) a:focus {
 
 .footer__social-link-item:not(:last-of-type) {
     margin-right: var(--gutter-small);
+    height: 5.5rem;
+    width: 5.5rem;
+    background-color: #ED653B;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 1rem;
+    border-radius: 50%;
 }
 
 .footer__social-image {
-    height: 4rem;
+    object-fit: contain;
+    height: 70%;
+    width: 100%;
+    max-width: 100%;
 }
 
 .footer__github-buttons {

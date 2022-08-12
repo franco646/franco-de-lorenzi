@@ -32,15 +32,38 @@ let alterStyles = (isBackToTopRendered) => {
     : "scale(0)";
 };
 
-document.querySelectorAll(".video").forEach((video) => {
-  video.addEventListener("mouseover", function() {
-    this.play();
+function playPauseVideo() {
+  let videos = document.querySelectorAll(".video");
+  videos.forEach((video) => {
+      // We can only control playback without insteraction if video is mute
+      video.muted = true;
+      // Play is a promise so we need to check we have it
+      let playPromise = video.play();
+      if (playPromise !== undefined) {
+          playPromise.then((_) => {
+              let observer = new IntersectionObserver(
+                  (entries) => {
+                      entries.forEach((entry) => {
+                          if (
+                              entry.intersectionRatio !== 1 &&
+                              !video.paused
+                          ) {
+                              video.load();  
+                          } else if (video.paused) {
+                              video.play();
+                          }
+                      });
+                  },
+                  { threshold: 1 }
+              );
+              observer.observe(video);
+          });
+      }
   });
-  
-  video.addEventListener("mouseleave", function() {
-    this.load();
-  });
-})
+}
+
+// And you would kick this off where appropriate with:
+playPauseVideo();
 
 
 window.addEventListener("scroll", () => {
