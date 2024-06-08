@@ -88,6 +88,20 @@ body {
     margin: 0 auto;
 }
 
+.swal2-popup {
+    font-size: 100% !important; /* Ajusta el tamaño de fuente */
+    color: var(--white-1) !important;
+}
+.swal2-title {
+    font-size: 125% !important; /* Ajusta el tamaño del título */
+}
+.swal2-content {
+    font-size: 100% !important; /* Ajusta el tamaño del contenido */
+}
+.swal2-confirm {
+    font-size: 100% !important; /* Ajusta el tamaño del botón */
+}
+
 @media(max-width: 1340px) {
     .row {
         max-width: 1100px;
@@ -122,6 +136,11 @@ img {
     max-width: 100%;
 }
 
+.swal2-warning {
+    border-color: var(--pink) !important;
+    color: var(--pink) !important;
+}
+
 /* --------------------------------------- */
 /* ----- Headlines and Paragraphs ----- */
 /* --------------------------------------- */
@@ -139,7 +158,7 @@ h2.about__title {
     text-align: center;
 }
 
-h2.about__title::after {
+h2.about__title::after, h2.swal2-title::after {
     margin-inline: auto;
     position: relative;
 }
@@ -256,11 +275,6 @@ a {
     border: 0;
 }
 
-button:focus,
-a:focus {
-    outline: 2px solid var(--pink);
-}
-
 body:not(.user-is-tabbing) button:focus,
 body:not(.user-is-tabbing) a:focus {
     outline: none;
@@ -270,21 +284,32 @@ body:not(.user-is-tabbing) a:focus {
     color: var(--pink);
 }
 
-.btn {
+.btn, .swal2-confirm {
     position: relative;
+    background-color: transparent !important;
     display: inline-block;
     padding: 1rem 4.2rem;
     text-decoration: none;
     color: inherit;
-    border: 1px solid  var(--pink);
+    border: 1px solid  var(--pink) !important;
     font-weight: 400;
 }
 
-.btn:focus {
-    outline: none;
+.btn:focus, .swal2-confirm::focus {
+    background-color: transparent !important;
+    display: inline-block;
+    padding: 1rem 4.2rem;
+    text-decoration: none;
+    color: inherit;
+    border: 1px solid  var(--pink) !important;
+    font-weight: 400;
 }
 
-.btn::after {
+div.swal2-container button.swal2-styled.swal2-confirm:focus {
+    box-shadow: none; /* Anula cualquier sombra aplicada anteriormente */
+}
+
+.btn::after, .swal2-confirm::after {
     content: '';
     display: block;
     position: absolute;
@@ -298,7 +323,7 @@ body:not(.user-is-tabbing) a:focus {
 }
 
 .btn:hover::after,
-.btn:focus::after {
+.swal2-confirm:hover::after {
     right: 0;
     background: var(--pink);
 }
@@ -339,12 +364,8 @@ body:not(.user-is-tabbing) a:focus {
     transition: all 0.2s cubic-bezier(1, 0.68, 0.16, 0.9);
 }
 
-.link__text:focus {
-    outline: none;
-}
 
-.link__text:hover::after,
-.link__text:focus:after {
+.link__text:hover::after {
     right: 0;
     background: var(--pink);
 }
@@ -520,7 +541,7 @@ body:not(.user-is-tabbing) a:focus {
 }
 
 .header {
-    background:linear-gradient(0deg,rgba(6,31,41,1),rgba(0,0,0,0)),url("https://www.xtrafondos.com/descargar.php?id=3128&resolucion=2880x1800") center center fixed;
+    background:linear-gradient(0deg,rgba(6,31,41,1),rgba(0,0,0,0)),url("images/e247c0f1e3ba8ba453d2ea4886251f36 (1).jpg") center center fixed;
     height: 100vh;
     background-size: cover;
     background-position: center;
@@ -780,7 +801,7 @@ h2 {
     }
 }
 
-.cv__button {
+.cv__button, .swal2-confirm {
     margin-top: 2.5rem;
     margin-inline: auto;
 }
@@ -849,16 +870,19 @@ h2 {
     height: 5.5rem;
     width: 5.5rem;
     background-color: #ED653B;
+    transition: all .2s;
     display: flex;
     flex-direction: column;
-    align-items: center;
-    padding: 1rem;
     border-radius: 50%;
+}
+
+.footer__social-link-item:hover {
+    transform: scale(1.1);
 }
 
 .footer__social-image {
     object-fit: contain;
-    height: 70%;
+    padding: .8rem;
     width: 100%;
     max-width: 100%;
 }
