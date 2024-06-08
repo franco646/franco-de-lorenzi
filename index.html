@@ -23,6 +23,7 @@
   <link rel="shortcut icon" type="image/png" href="./images/favicon.png" />
   <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />  <!-- Put your site title here -->
+  
   <title>
     Franco De Lorenzi
   </title>
@@ -109,7 +110,7 @@
             <div class="work__text" data-aos="fade-right">
               <h3>Netflix clon</h3>
               <p>
-                Una aplicación responsive clon de Netflix construida con Next.js y Tailwind CSS en la que se pueden visualizar películas y series que se obtienen de una <a href="https://developers.themoviedb.org/3/">API</a>.
+                Una aplicación responsive, clon de Netflix, construida con Next.js y Tailwind CSS, que permite visualizar películas y series obtenidas de una <a href="https://developers.themoviedb.org/3/">API</a>.
               </p>
               <ul class="work__list">
                 <li>Next.js</li>
@@ -140,7 +141,7 @@
             <div class="work__text" data-aos="fade-right">
               <h3>Superhéroes</h3>
               <p>
-                Esta aplicación permite crear, editar y borrar equipos conformados por héroes y villanos que se proveen de una API de terceros, además de poder ver en detalle los miembros que los conforman. También cuenta con un método de autentificación de usuarios y validación de formularios.
+                Esta aplicación permite crear, editar y eliminar equipos compuestos por héroes y villanos, utilizando una API de terceros. Además, permite ver en detalle los miembros que los componen. También incluye métodos de autenticación de usuarios y validación de formularios.
               </p>
               <ul class="work__list">
                 <li>React</li>
@@ -152,7 +153,7 @@
               </ul>
 
               <div class="work__links">
-                <a href="https://superheros-app.onrender.com/login" target="_blank" class="link__text">
+                <a href="https://superheros-app.onrender.com/login" target="_blank" class="link__text" onclick="showAlert()">
                   Visitar sitio <span>&rarr;</span>
                 </a>
                 <a href="https://github.com/franco646/superheros-app" title="Ver repositorio en GitHub" target="_blank">
@@ -161,7 +162,7 @@
               </div>
             </div>
             <div class="work__image-box" style="text-align: center;" data-aos="fade-left">
-              <a href="https://superheros-app.onrender.com/login" target="_blank">
+              <a href="https://superheros-app.onrender.com/login" target="_blank" onclick="showAlert()">
                 <video poster="images\Imagen5.png" class="work__image video" playsinline loop muted>
                   <source src="videos\superheroes.webm" type="video/webm">
                 </video>
@@ -173,10 +174,7 @@
             <div class="work__text" data-aos="fade-right">
               <h3>Sistema de alquiler de autos (MVC)</h3>
               <p>
-                Panel de administración de empleados para dar de alta clientes.
-                Crear, leer, actualizar y borrar autos. Construido con dependency
-                injection container y testeado con jest. Tambien cuenta con autentificación de 
-                usuarios y sesiones.
+                Panel de administración de empleados para el registro de clientes, gestión completa de vehículos. Construido con un contenedor de inyección de dependencias y probado con Jest. Además, cuenta con autenticación de usuarios y gestión de sesiones.
               </p>
               <ul class="work__list">
                 <li>Node.js con Express</li>
@@ -188,7 +186,7 @@
               </ul>
 
               <div class="work__links">
-                <a href="https://sistema-de-alquiler-de-autos-mvc.onrender.com" target="_blank" class="link__text">
+                <a href="https://sistema-de-alquiler-de-autos-mvc.onrender.com" target="_blank" class="link__text" onclick="showAlert()">
                   Visitar sitio <span>&rarr;</span>
                 </a>
                 <a href="https://github.com/franco646/sistema-de-alquiler-de-autos-MVC-" title="Ver repositorio en GitHub" target="_blank">
@@ -197,7 +195,7 @@
               </div>
             </div>
             <div class="work__image-box" style="text-align: center;" data-aos="fade-left">
-              <a href="https://sistema-de-alquiler-de-autos-mvc.onrender.com" target="_blank">
+              <a href="https://sistema-de-alquiler-de-autos-mvc.onrender.com" target="_blank" onclick="showAlert()">
                 <video poster="images\Imagen4.png" class="work__image video" playsinline loop muted>
                   <source src="videos\sistema-de-alquiler-de-autos-MVC.webm" type="video/webm">
                 </video>
@@ -245,16 +243,16 @@
         <h2 class="about__title">Sobre mí</h2>
         <div class="about__content headline">
           <div class="about__text" style="margin: auto;">
-            <p>Me llamo Franco y soy un desarrollador web JavaScript autodidacta, en continuo aprendizaje utilizando React.Js y Node.js. Me apasiona afrontar desafíos y aplicar nuevas soluciones en cada uno de mis proyectos, con el fin de aprender y descubrir sobre distintas herramientas, generando un código más limpio.</p>
-            <p>Actualmente, me encuentro estudiando Licenciatura En Sistemas y busco seguir desarrollándome profesionalmente, trabajando en conjunto con otros programadores, adquiriendo habilidades más allá de la aplicación práctica de los conocimientos que se adquieren en la carrera. </p>
-            <p>Si estás interesado/a en un perfil de desarrollador junior con muchas ganas de aprender, contacta conmigo.</p>
+            <p>¡Hola! Mi nombre es Franco y soy un desarrollador web autodidacta, en continuo aprendizaje utilizando JavaScript y enfocado en el uso de tecnologías como React.js y Node.js. Me apasiona afrontar desafíos y aplicar nuevas soluciones en cada uno de mis proyectos, con el fin de aprender y descubrir sobre distintas herramientas, buscando constantemente nuevas formas de mejorar mis habilidades.</p>
+            <p>Actualmente, estoy estudiando la Licenciatura en Sistemas y tengo como objetivo seguir creciendo profesionalmente. Me interesa colaborar con otros programadores para adquirir habilidades prácticas que vayan más allá de la teoría enseñada en la universidad. Estoy comprometido a ampliar mi experiencia trabajando en equipo y aplicando mis conocimientos en proyectos reales.</p>
+            <p>Si estás buscando un desarrollador junior con muchas ganas de aprender, ¡me encantaría formar parte de tu equipo! No dudes en contactarme.</p>
               <div class="about__icons">  
-                <div class="about__icon-container"><img src=".\images\logos\person.svg" />21 años</div>
+                <div class="about__icon-container"><img src=".\images\logos\person.svg" />23 años</div>
                 <div class="about__icon-container"><img src=".\images\logos\personSpeking.svg" />Inglés intermedio </div>
                 <div class="about__icon-container"><img src=".\images\logos\location (1).svg"  />Buenos Aires, Argentina</div>
               </div>
           </div>
-          <a href="CV\CV_-_Franco_De_Lorenzi.pdf" class="btn cv__button" target="_blank">Mi curriculum</a>
+          <a href="CV\CV_-_Franco_De_Lorenzi.pdf" class="btn cv__button" target="_blank">Mi currículum</a>
 
         </div>
       </div>
@@ -290,7 +288,7 @@
       <ul class="footer__social-links">
         <li class="footer__social-link-item">
           <a href="https://github.com/franco646" title="Link a perfil de Github" target="_blank">
-            <img src="./images/github.svg" class="footer__social-image" alt="Github">
+            <img src="images/logos/github-mark-white.svg" class="footer__social-image" alt="Github">
           </a>
         </li>
         <li class="footer__social-link-item">
@@ -304,7 +302,7 @@
           </a>
         </li>
         <li class="footer__social-link-item">
-          <a href="https://api.whatsapp.com/send?phone=+5401126770072" title="Link a perfil de Github" target="_blank">
+          <a href="https://wa.me/5401126770072" title="Link a WhatsApp" target="_blank">
             <img src="./images/whatsapp.svg" class="footer__social-image" alt="Github">
           </a>
         </li>
@@ -317,10 +315,11 @@
     <img src="./images/arrow-up.svg" alt="Back to Top" class="back-to-top__image"/>
   </a>
   <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
   <script>
     AOS.init();
   </script>
-  <script src="./index.js"></script>
+  <script src="index.js"></script>
   <script src="particles.js"></script>
   <script src="app.js"></script>
 </body>
