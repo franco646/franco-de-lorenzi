@@ -1,7 +1,3 @@
-/* -----------------------------------------
-  Have focus outline only for keyboard users 
- ---------------------------------------- */
-
 const handleFirstTab = (e) => {
   if(e.key === 'Tab') {
     document.body.classList.add('user-is-tabbing')
@@ -85,4 +81,13 @@ window.addEventListener("scroll", () => {
     }
   }
 });
+
+function showAlert() {
+  Swal.fire({
+    background: '#061f29',
+    title: "Aviso de carga",
+    icon: "warning",
+    text: "Tenga en cuenta que el sitio web puede tardar hasta un minuto en cargar debido a que el servidor se desactiva después de períodos de inactividad.",
+  })
+}
 
